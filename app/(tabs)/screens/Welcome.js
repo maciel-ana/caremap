@@ -1,7 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import welcome from './Welcome';
 
 const App = () => (
   <View style={styles.container}>
@@ -11,9 +10,6 @@ const App = () => (
     </Text>
 
     <View style={styles.circle}>
-      {/* <Imagem>
-
-      </Imagem> */}
       <Text style={styles.textWelcome}>
         Utilize nossa ferramenta de{'\n'}
         localização e tenha acesso a{'\n'}
@@ -33,6 +29,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     alignItems: 'center',
     backgroundColor: '#619C95',
+    fontFamily: 'Inter',
   },
   title: {
     alignItems: 'center',
@@ -59,12 +56,10 @@ const styles = StyleSheet.create({
     fontSize: 35,
     fontWeight: 'bold',
     textAlign: 'center',
-    fontFamily: 'Inter',
     paddingTop: '5%'
   },
   care: {
     textAlign: 'center',
-    fontFamily: 'Inter',
     padding: 4,
     borderBottomColor: 'black',
     borderBottomWidth: StyleSheet.hairlineWidth,
@@ -77,7 +72,6 @@ const styles = StyleSheet.create({
   },
   textWelcome: {
     color: '#000000',
-    fontFamily: 'Inter',
     fontSize: 18,
     textAlign: 'center',
     paddingTop: 20,

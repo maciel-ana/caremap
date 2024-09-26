@@ -3,11 +3,12 @@ import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import Welcome from './Welcome';
+import Welcome from './Welcome'; // Certifique-se de que o Welcome.js esteja correto
 
 const Stack = createStackNavigator();
 
-const App = ({ navigation }) => (
+// Componente Home - Tela inicial
+const Home = ({ navigation }) => (
   <View style={styles.container}>
     <Text style={styles.title}>
       Care
@@ -27,14 +28,15 @@ const App = ({ navigation }) => (
         com doenças raras a hospitais{'\n'}
         especializados de forma fácil.
       </Text>
-    <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Welcome')}>
-      <Icon name="chevron-right" size={20} color="#000000" style={styles.icon} />
-    </TouchableOpacity>
+      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Welcome')}>
+        <Icon name="chevron-right" size={20} color="#000000" style={styles.icon} />
+      </TouchableOpacity>
     </View>
   </View>
 );
 
-const Home = () => {
+// Componente de navegação principal (antes chamado de App)
+const MainApp = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Home">
@@ -57,20 +59,20 @@ const styles = StyleSheet.create({
     paddingTop: '20%',
     paddingVertical: 8,
     color: '#226752',
-    fontSize: 30,
+    fontSize: 40,
     fontWeight: 'bold',
   },
   map: {
     color: '#ffffff',
   },
   circle: {
-    width: 320, 
+    width: 320,
     height: 320,
-    borderRadius: '100%', 
+    borderRadius: 160, // Círculo perfeito
     backgroundColor: '#ffffff',
-    alignItems: 'center', 
-    justifyContent: 'center', 
-    marginTop: '30%', 
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginTop: '30%',
   },
   welcome: {
     color: '#226752',
@@ -78,7 +80,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
     fontFamily: 'Inter',
-    paddingTop: '5%'
+    paddingTop: '5%',
   },
   care: {
     textAlign: 'center',
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
   },
   line: {
     width: '55%',
-    height: 1, 
+    height: 1,
     backgroundColor: 'black',
     marginTop: 13,
   },
@@ -106,4 +108,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default MainApp;
